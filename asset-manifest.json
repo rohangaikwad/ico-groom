@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.8a094f58.chunk.css",
-    "main.js": "/static/js/main.c5e8000b.chunk.js",
-    "main.js.map": "/static/js/main.c5e8000b.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.4dd3e1ad.js",
-    "runtime-main.js.map": "/static/js/runtime-main.4dd3e1ad.js.map",
-    "static/js/2.0944dbf4.chunk.js": "/static/js/2.0944dbf4.chunk.js",
-    "static/js/2.0944dbf4.chunk.js.map": "/static/js/2.0944dbf4.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.8a094f58.chunk.css.map": "/static/css/main.8a094f58.chunk.css.map",
-    "static/js/2.0944dbf4.chunk.js.LICENSE.txt": "/static/js/2.0944dbf4.chunk.js.LICENSE.txt",
-    "static/media/style.scss": "/static/media/fa-solid-900.eb1e9adc.woff2"
+    "main.css": "/ico-groom/static/css/main.883a462d.chunk.css",
+    "main.js": "/ico-groom/static/js/main.c5e8000b.chunk.js",
+    "main.js.map": "/ico-groom/static/js/main.c5e8000b.chunk.js.map",
+    "runtime-main.js": "/ico-groom/static/js/runtime-main.0bc11c23.js",
+    "runtime-main.js.map": "/ico-groom/static/js/runtime-main.0bc11c23.js.map",
+    "static/js/2.0944dbf4.chunk.js": "/ico-groom/static/js/2.0944dbf4.chunk.js",
+    "static/js/2.0944dbf4.chunk.js.map": "/ico-groom/static/js/2.0944dbf4.chunk.js.map",
+    "index.html": "/ico-groom/index.html",
+    "static/css/main.883a462d.chunk.css.map": "/ico-groom/static/css/main.883a462d.chunk.css.map",
+    "static/js/2.0944dbf4.chunk.js.LICENSE.txt": "/ico-groom/static/js/2.0944dbf4.chunk.js.LICENSE.txt",
+    "static/media/style.scss": "/ico-groom/static/media/fa-solid-900.eb1e9adc.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.4dd3e1ad.js",
+    "static/js/runtime-main.0bc11c23.js",
     "static/js/2.0944dbf4.chunk.js",
-    "static/css/main.8a094f58.chunk.css",
+    "static/css/main.883a462d.chunk.css",
     "static/js/main.c5e8000b.chunk.js"
   ]
 }
