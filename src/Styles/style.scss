@@ -89,3 +89,37 @@ aside {
 #selection {
     #generate { grid-row: 3; grid-column: 3; cursor: pointer; }
 }
+
+
+
+
+#generate-bundle {
+    padding: 30px;
+
+    #glyphs {
+        margin-top: 50px;
+        ul {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(calc(var(--icon-size) * 2), 100px)); grid-gap: 15px; margin-top: 20px;
+            li {
+                display: flex; flex-direction: column; align-items: center; border: solid 1px #ccc; padding: 10px;
+                input { width: 100%; }
+            }
+        }
+    }
+
+    .actions {
+        margin-top: 30px; display: flex; align-items: center;
+
+        button {
+            font-size: 16px;
+        }
+        #download { height: 50px; width: 170px; margin-right: 20px; color: #fff; background: cornflowerblue; border: none; }
+        #select { background: none; border: none; text-decoration: underline; }        
+    }
+
+    ol {
+        margin-top: 50px;
+        li { margin-bottom: 20px; }
+        code { border: solid 1px #ccc; padding: 5px; border-radius: 3px; background: lightgray; font-size: 14px; }
+    }
+}

@@ -1,4 +1,6 @@
 * { box-sizing: border-box; }
 body { margin: 0; font-family: 'Carmen Sans'; line-height: 1; background-color: #f1f1f1; }
-ul, ol { list-style: none; padding: 0; margin: 0; }
+ul, ol { list-style: none; padding: 0; margin: 0; list-style-position: inside; }
+ol { list-style-type: decimal; }
+
 h1, h2, h3, h4, h5, h6 { margin: 0; }

@@ -61,7 +61,8 @@ export default class Generate extends Component {
             "icons": this.state.icons,
             "height": 1024,
             "metadata": {
-                "name": "fa-brands"
+                "name": "icomoon",
+                "designer": "Rohan Gaikwad"
             },
             "preferences": {
                 "showGlyphs": true,
@@ -74,7 +75,8 @@ export default class Generate extends Component {
                     "metadata": {
                         "fontFamily": "icomoon",
                         "majorVersion": 1,
-                        "minorVersion": 0
+                        "minorVersion": 0,
+                        "designer": "Rohan Gaikwad"
                     },
                     "metrics": {
                         "emSize": 1024,
@@ -83,7 +85,11 @@ export default class Generate extends Component {
                     },
                     "embed": false,
                     "noie8": true,
-                    "ie7": false
+                    "ie7": false,
+                    "showSelector": false,
+                    "showMetrics": false,
+                    "showMetadata": true,
+                    "showVersion": true
                 },
                 "imagePref": {
                     "prefix": "fa-",
@@ -118,14 +124,19 @@ export default class Generate extends Component {
                     </ul>
                 </section>
 
-                <button id="select" onClick={() => this.navigate('/')}>
-                    Select More
-                </button>
-                <button id="download" onClick={() => this.download()}>
-                    Download
-                </button>
+                <div className="actions">
+                    <button id="download" onClick={() => this.download()}>Download</button>
+                    <button id="select" onClick={() => this.navigate('/')}>+ Add More Icons</button>
+                </div>
 
-                <a href="https://icomoon.io/app/#/projects" target="_blank" rel="noreferrer">Import downloaded file on Icomoon</a>
+                <ol>
+                    <li>Open <a href="https://icomoon.io/app/#/projects" target="_blank" rel="noreferrer">Icomoon App</a></li>
+                    <li>Click on <code>Import Project</code> and select downloaded JSON file.</li>
+                    <li>Click on <code>Load</code></li>
+                    <li>Profit?</li>
+                </ol>
+                <p></p>
+
             </div>
         )
     }
