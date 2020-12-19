@@ -5,10 +5,11 @@ import { NavigateTo } from './Utils/Helpers';
 
 import Router from './Components/Router';
 
-import FaBrands from './Data/FaBrands.json';
-import FaLight from './Data/FaLight.json';
+import Fa47 from './Data/Fa47.json';
 import FaSolid from './Data/FaSolid.json';
 import FaRegular from './Data/FaRegular.json';
+import FaLight from './Data/FaLight.json';
+import FaBrands from './Data/FaBrands.json';
 
 export default class App extends Component {
 
@@ -16,6 +17,7 @@ export default class App extends Component {
         super(props);
         this.state = {
             route: '/',
+            fa47: Fa47,
             brands: FaBrands,
             solid: FaSolid,
             regular: FaRegular,
@@ -24,11 +26,13 @@ export default class App extends Component {
             customicons: [],
             keyword: '',
             selected: {
+                fa47: [],
                 solid: [],
                 regular: [],
                 light: [],
                 brands: []
-            }
+            },
+            defaultsLoaded: false
         }
     }
 
@@ -65,6 +69,7 @@ export default class App extends Component {
                 solid: this.state.solid,
                 regular: this.state.regular,
                 light: this.state.light,
+                fa47: this.state.fa47,
                 setIcons: (key, data) => this.setState({ [key]: data }),
 
                 selected: this.state.selected,
@@ -77,7 +82,10 @@ export default class App extends Component {
                 search: (data) => this.setState({ keyword: data }),
 
                 route: this.state.route,
-                navTo: (path) => this.setState({ route: path })
+                navTo: (path) => this.setState({ route: path }),
+
+                defaultsLoaded: this.state.defaultsLoaded,
+                setDefaultsLoaded: (val) => this.setState({ defaultsLoaded: val }),
             }}>
                 <Router />
             </MainContext.Provider>

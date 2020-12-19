@@ -26,6 +26,7 @@ export default class Select extends Component {
                 <Sidebar />
 
                 <section id="icons">
+                    {(ac === 'all' || ac === 'fa47') && <FontCategory keyword={this.context.keyword} name="Fa47" category={this.context.fa47} />}
                     {(ac === 'all' || ac === 'solid') && <FontCategory keyword={this.context.keyword} name="Solid" category={this.context.solid} />}
                     {(ac === 'all' || ac === 'regular') && <FontCategory keyword={this.context.keyword} name="Regular" category={this.context.regular} />}
                     {(ac === 'all' || ac === 'light') && <FontCategory keyword={this.context.keyword} name="Light" category={this.context.light} />}

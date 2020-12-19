@@ -5,8 +5,15 @@ export default class Selected extends Component {
     static contextType = MainContext;
 
     removeIcon = (category, icon) => {
-        let iconELem = document.querySelector(`.${category}.icons ul li[data-code="${icon.properties.code}"]`);
-        iconELem.click();
+        let icons = [...this.context[category].icons];
+        let index = icons.findIndex(i => i.properties.code === icon.properties.code);
+        delete icons[index].selected;
+        this.context.setIcons({ [category]: icons })
+
+        let selected = { ...this.context.selected }
+        let selIndex = selected[category].findIndex(s => s.properties.code === icon.properties.code);
+        selected[category].splice(selIndex, 1);
+        this.context.setSelected(selected);
     }
 
     render() {

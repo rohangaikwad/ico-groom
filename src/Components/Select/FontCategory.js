@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import MainContext from '../../Contexts/MainContext';
 
+
+import Defaults from './../../Data/Defaults.json';
+
 export default class FontCategory extends Component {
     static contextType = MainContext;
 
@@ -24,11 +27,27 @@ export default class FontCategory extends Component {
         let interval = setInterval(() => {
             this.mounted && this.setState({ limit: this.state.limit + 5 })
         }, 10)
-        
+
         setTimeout(() => {
             clearInterval(interval);
             this.mounted && this.setState({ limit: 2000 })
         }, 500)
+
+        !this.context.defaultsLoaded && this.loadDefaults();
+    }
+
+    loadDefaults() {
+        if (Defaults[this.category] !== undefined) {
+            console.log(Defaults[this.category]);
+
+            let icons = [...this.props.category.icons];
+            Defaults[this.category].forEach(code => {
+                let icon = icons.filter(i => i.properties.code.toString(16) === code)[0];
+                this.toggleSelection(icon);
+            })
+
+            this.context.setDefaultsLoaded(true);
+        }
     }
 
     componentWillUnmount() {
