@@ -41,6 +41,10 @@ export default class Generate extends Component {
         let _icons = [...this.state.icons];
         _icons[index].properties.code = parseInt(hexValue, 16);
         this.setState({ icons: _icons });
+
+        let codes = _icons.map(icon => icon.properties.code);
+        let duplicates = [...new Set(codes.filter((item, index) => codes.indexOf(item) !== index))];
+        this.setState({ duplicates });
     }
 
     download = () => {
@@ -123,6 +127,8 @@ export default class Generate extends Component {
                         ))}
                     </ul>
                 </section>
+
+                {this.state.duplicates.length > 0 && <div class="duplicate-alert">Warning: Please change unicodes of icons highlighted in red. Each icon should have a unique Unicode identifier!</div>}
 
                 <div className="actions">
                     <button id="download" onClick={() => this.download()}>Download</button>
