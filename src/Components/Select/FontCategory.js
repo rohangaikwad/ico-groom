@@ -41,7 +41,7 @@ export default class FontCategory extends Component {
             console.log(Defaults[this.category]);
 
             let icons = [...this.props.category.icons];
-            Defaults[this.category].forEach(code => {
+            Defaults[this.category].sort().forEach(code => {
                 let icon = icons.filter(i => i.properties.code.toString(16) === code)[0];
                 this.toggleSelection(icon);
             })
