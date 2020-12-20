@@ -68,6 +68,20 @@ aside {
 #selected {
     grid-row: 1 / span 2; background: #fff; border-left: solid 1px #ccc; padding: 30px;
 
+    h1 { margin-bottom: 30px; }
+    
+
+    #reset {
+        position: absolute; top: 30px; right: 30px; background: transparent; border: none; cursor: pointer;
+        svg { width: 20px; fill: #000; transition: 0.1s; }
+        span { display: none; position: absolute; background: #4a4a4a; border-radius: 3px; color: #fff; padding: 6px 10px; font-size: 12px; right: 35px; top: 0px; white-space: nowrap; }
+
+        &:hover {
+            span { display: block; }
+            svg { fill: red; }
+        }
+    }
+
     .category {
         margin-bottom: 30px;
         h5 { text-transform: capitalize; margin-bottom: 10px; }

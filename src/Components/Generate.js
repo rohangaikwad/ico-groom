@@ -8,7 +8,7 @@ export default class Generate extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            icons: []
+            icons: [], duplicates: []
         }
 
     }

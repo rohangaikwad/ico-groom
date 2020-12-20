@@ -20,25 +20,28 @@ export default class FontCategory extends Component {
         this.mounted = true;
 
         this.category = this.props.category.metadata.name.replace('fa-', '');
-
         this.mounted && this.setState({ icons: [...this.props.category.icons] })
+        !this.context.defaultsLoaded && this.loadDefaults();
 
+        this.stagger();
+    }
+
+    stagger() {
+        let limit = 10;
         // optimization - staggered icon load
         let interval = setInterval(() => {
-            this.mounted && this.setState({ limit: this.state.limit + 5 })
+            limit += 5;
+            this.mounted && this.setState({ limit: limit })
         }, 10)
 
         setTimeout(() => {
             clearInterval(interval);
             this.mounted && this.setState({ limit: 2000 })
-        }, 500)
-
-        !this.context.defaultsLoaded && this.loadDefaults();
+        }, 500);
     }
 
     loadDefaults() {
         if (Defaults[this.category] !== undefined) {
-            console.log(Defaults[this.category]);
 
             let icons = [...this.props.category.icons];
             Defaults[this.category].sort().forEach(code => {
@@ -56,8 +59,9 @@ export default class FontCategory extends Component {
 
     componentDidUpdate(old) {
         if (old.keyword === this.props.keyword) return;
-        let keyword = this.props.keyword.toLowerCase();
+        
 
+        let keyword = this.props.keyword.toLowerCase();
         if (keyword !== '') {
 
             let icons = [...this.props.category.icons].filter(icon => {
@@ -70,9 +74,11 @@ export default class FontCategory extends Component {
                 return false;
             })
 
-            this.setState({ icons: icons });
+            this.setState({ icons: icons, limit: 5 });
+            this.stagger();
         } else {
-            this.setState({ icons: [...this.props.category.icons] });
+            this.setState({ icons: [...this.props.category.icons], limit: 5 });
+            this.stagger();
         }
     }
 
