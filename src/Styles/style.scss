@@ -2,7 +2,7 @@
 @import './fonts';
 
 :root {
-    --icon-size: 50px;
+    --icon-size: 40px;
 }
 
 body { background-color: #f7f7f7; }
@@ -54,12 +54,13 @@ aside {
                 svg { fill: cornflowerblue; }
             }
 
+            span { text-align: center; margin-top: 5px; font-size: 12px; color: #9c9c9c; }
+
             &.active {
                 background: cornflowerblue; color: #fff; border-color: #153979;
                 svg { fill: white; }
+                span { color: #fff; }
             }
-    
-            span { text-align: center; margin-top: 5px; }
         }
     }
 }
