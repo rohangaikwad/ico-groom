@@ -45,9 +45,9 @@ aside {
     }
 
     ul.icon-list {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(calc(var(--icon-size) * 3), 1fr)); margin-bottom: 30px;
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(calc(var(--icon-size) * 3), 1fr)); margin-bottom: 30px; grid-gap: 10px; padding: 10px;
         li {
-            display: flex; align-items: center; padding: 20px 0; cursor: pointer; transition: 0.3s; flex-direction: column;
+            display: flex; align-items: center; padding: 10px 0; cursor: pointer; transition: 0.3s; flex-direction: column; border: solid 2px transparent;
 
             &:hover {
                 background: #fff; box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
@@ -55,7 +55,7 @@ aside {
             }
 
             &.active {
-                background: cornflowerblue; color: #fff;
+                background: cornflowerblue; color: #fff; border-color: #153979;
                 svg { fill: white; }
             }
     

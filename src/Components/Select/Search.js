@@ -12,7 +12,7 @@ export default class Search extends Component {
     render() {
         return (
             <section id="search">
-                <input type="text" onKeyUp={(e) => this.search(e.target.value)} />
+                <input type="text" onKeyUp={(e) => this.search(e.target.value)} placeholder="Search icons"/>
             </section>
         )
     }
