@@ -6,11 +6,22 @@ import Selected from './Selected';
 import Search from './Search';
 
 import { NavigateTo } from './../../Utils/Helpers';
+import ReactGA from 'react-ga';
 
 export default class Select extends Component {
     static contextType = MainContext;
 
+    componentDidMount(){
+        ReactGA.pageview('/home');
+    }
+
     navigate = (path) => {
+        ReactGA.event({
+            category: 'User',
+            action: 'Selected icons',
+            value: 1
+        });
+
         NavigateTo(path, () => {
             this.context.navTo(path);
         })

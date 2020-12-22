@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import ReactGA from 'react-ga';
+import Cookies from 'js-cookie';
+import { v4 as uuidv4 } from 'uuid';
+
+
 import MainContext from './Contexts/MainContext';
 
 import { NavigateTo } from './Utils/Helpers';
@@ -37,6 +42,20 @@ export default class App extends Component {
     }
 
     componentDidMount() {
+        let uuid = Cookies.get('uuid');
+        if (uuid === undefined) {
+            uuid = uuidv4();
+            Cookies.set('uuid', uuid, { expires: 9999 })
+        }
+
+        ReactGA.initialize('G-7S16PWJKD4', {
+            gaOptions: {
+                userId: uuid
+            }
+            //gaAddress: `${window.location.origin}/static-content/js/libs/analytics.js`
+        });
+
+
         window.onpopstate = (evt) => {
             console.log(evt);
             console.log(this.state.route);

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import MainContext from '../Contexts/MainContext';
 import { NavigateTo } from './../Utils/Helpers';
 
+import ReactGA from 'react-ga';
+
 export default class Generate extends Component {
     static contextType = MainContext;
 
@@ -14,6 +16,7 @@ export default class Generate extends Component {
     }
 
     componentDidMount() {
+        ReactGA.pageview('/generate');
         this.mounted = true;
         let icons = JSON.parse(JSON.stringify(Object.keys(this.context.selected).map(k => this.context.selected[k]).flat()));
 
@@ -57,6 +60,24 @@ export default class Generate extends Component {
         document.body.appendChild(element);
         element.click();
         document.body.removeChild(element);
+
+        Object.keys(this.context.selected).forEach(cat => {
+            this.context.selected[cat].forEach(icon => {
+                ReactGA.event({
+                    category: 'Icons',
+                    action: 'Downloaded',
+                    label: `${icon.properties.name} - ${cat}`,
+                    value: 1,
+                    nonInteraction: true
+                });
+            })
+        });
+
+        ReactGA.event({
+            category: 'User',
+            action: 'Downloaded icons',
+            value: 1
+        });
     }
 
     generateJSON = () => {
@@ -135,6 +156,7 @@ export default class Generate extends Component {
                     <button id="select" onClick={() => this.navigate('/')}>+ Add More Icons</button>
                 </div>
 
+                <h2>Next Steps</h2>
                 <ol>
                     <li>Open <a href="https://icomoon.io/app/#/projects" target="_blank" rel="noreferrer">Icomoon App</a></li>
                     <li>Click on <code>Import Project</code> and select downloaded JSON file.</li>
