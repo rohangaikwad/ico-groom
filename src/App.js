@@ -16,7 +16,15 @@ import FaRegular from './Data/FaRegular.json';
 import FaLight from './Data/FaLight.json';
 import FaBrands from './Data/FaBrands.json';
 
+import FaSolid6 from './Data/FaSolid6.json';
+import FaRegular6 from './Data/FaRegular6.json';
+import FaLight6 from './Data/FaLight6.json';
+import FaBrands6 from './Data/FaBrands6.json';
+import FaThin6 from './Data/FaThin6.json';
+import FaDuotone6 from './Data/FaDuotone6.json';
+
 export default class App extends Component {
+
 
     constructor(props) {
         super(props);
@@ -27,15 +35,27 @@ export default class App extends Component {
             solid: FaSolid,
             regular: FaRegular,
             light: FaLight,
-            activeCategory: 'all',
+            solid6: FaSolid6,
+            regular6: FaRegular6,
+            light6: FaLight6,
+            brands6: FaBrands6,
+            thin6: FaThin6,
+            duotone6: FaDuotone6,
+            activeCategory: 'solid6',
             customicons: [],
             keyword: '',
             selected: {
-                fa47: [],
+                solid6: [],
+                regular6: [],
+                light6: [],
+                thin6: [],
+                brands6: [],
+                duotone6: [],
                 solid: [],
                 regular: [],
                 light: [],
-                brands: []
+                brands: [],
+                fa47: []
             },
             defaultsLoaded: false
         }
@@ -84,6 +104,13 @@ export default class App extends Component {
     render() {
         return (
             <MainContext.Provider value={{
+                solid6: this.state.solid6,
+                regular6: this.state.regular6,
+                light6: this.state.light6,
+                thin6: this.state.thin6,
+                brands6: this.state.brands6,
+                duotone6: this.state.duotone6,
+
                 brands: this.state.brands,
                 solid: this.state.solid,
                 regular: this.state.regular,
