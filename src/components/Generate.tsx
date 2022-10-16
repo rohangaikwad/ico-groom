@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { IconType } from '../Interfaces';
+import { IIconType } from '../types/Interfaces';
 import { useNavigate } from "@solidjs/router";
 // import ReactGA from 'react-ga';
 
@@ -12,8 +12,8 @@ const Generate: Component = () => {
     const navigate = useNavigate();
     const { selected } = Store;
 
-    const icons = Object.entries(selected()).map(x => x[1]).flat();
-    const codes = icons.map((icon: IconType) => icon.defaultCode);
+    const icons = Object.values(selected()).flat();
+    const codes = icons.map((icon: IIconType) => icon.defaultCode);
     const duplicates = [...new Set(codes.filter((item, index) => codes.indexOf(item) !== index))];
 
     const navigateTo = (path:string) => {
@@ -45,7 +45,7 @@ const Generate: Component = () => {
         document.body.removeChild(element);
 
         Object.entries(selected()).forEach(catArr => {
-            catArr[1].forEach((icon: IconType) => {
+            catArr[1].forEach((icon: IIconType) => {
                 // ReactGA.event({
                 //     category: 'Icons',
                 //     action: 'Downloaded',
@@ -118,7 +118,7 @@ const Generate: Component = () => {
             <section id="glyphs">
                 <h2>Selected Icons</h2>
                 <ul>
-                    {icons.map((icon: IconType, i) => (
+                    {icons.map((icon: IIconType, i) => (
                         <li class={duplicates.includes(icon.defaultCode) ? 'duplicate' : ''}>
                             <svg viewBox={`0 0 ${icon.width || 1024} 1024`}>
                                 {icon.paths.map((path) => (

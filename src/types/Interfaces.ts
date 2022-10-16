@@ -1,9 +1,9 @@
-interface Metadata {
+interface IMetadata {
     name: string;
     iconsHash: number;
 }
 
-export interface IconType {
+export interface IIconType {
     paths: string[];
     width: number;
     tags: string[];
@@ -12,21 +12,21 @@ export interface IconType {
     selected?: boolean;
 }
 
-interface Metadata2 {
+interface IMetadata2 {
     fontFamily: string;
     majorVersion: number;
     minorVersion: number;
 }
 
-interface Metrics {
+interface IMetrics {
     emSize: number;
     baseline: number;
 }
 
-interface FontPref {
+interface IFontPref {
     prefix: string;
-    metadata: Metadata2;
-    metrics: Metrics;
+    metadata: IMetadata2;
+    metrics: IMetrics;
     embed: boolean;
     noie8: boolean;
     ie7: boolean;
@@ -35,7 +35,7 @@ interface FontPref {
     showMetadata: boolean;
 }
 
-interface ImagePref {
+interface IImagePref {
     prefix: string;
     png: boolean;
     useClassSelector: boolean;
@@ -43,22 +43,33 @@ interface ImagePref {
     bgColor: number;
 }
 
-interface Preferences {
+interface IPreferences {
     showGlyphs: boolean;
     showCodes: boolean;
     showQuickUse: boolean;
     showQuickUse2: boolean;
     showSVGs: boolean;
-    fontPref: FontPref;
-    imagePref: ImagePref;
+    fontPref: IFontPref;
+    imagePref: IImagePref;
     historySize: number;
 }
 
-export interface FontDefType {
-    metadata: Metadata;
+export interface IFontDefType {
+    metadata: IMetadata;
     height: number;
     prevSize: number;
-    icons: IconType[];
-    preferences: Preferences;
+    icons: IIconType[];
+    preferences: IPreferences;
     IcoMoonType: string;
+}
+
+export interface ISelectedType {
+    solid6: IIconType[],
+    sharpSolid6: IIconType[],
+    regular6: IIconType[],
+    light6: IIconType[],
+    thin6: IIconType[],
+    brands6: IIconType[],
+    duotone6: IIconType[],
+    fa47: IIconType[]
 }
