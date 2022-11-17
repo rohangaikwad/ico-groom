@@ -4,7 +4,7 @@ import { Routes, Route } from "@solidjs/router";
 // import Cookies from 'js-cookie';
 // import { v4 as uuidv4 } from 'uuid';
 
-import Select from "./components/Select/Select";
+import Select from "./components/Select";
 import Generate from "./components/Generate";
 
 const App: Component = () => {

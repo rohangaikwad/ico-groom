@@ -7,7 +7,7 @@ import Selected from './Selected';
 import Search from './Search';
 // import ReactGA from 'react-ga';
 
-import Store from "./../../GlobalStore";
+import Store from "../../GlobalStore";
 
 const Select: Component = () => {
     const navigate = useNavigate();

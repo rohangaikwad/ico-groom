@@ -328,10 +328,22 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@reach/observe-rect@^1.1.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@reach/observe-rect/-/observe-rect-1.2.0.tgz#d7a6013b8aafcc64c778a0ccb83355a11204d3b2"
+  integrity sha512-Ba7HmkFgfQxZqqaeIWWkNK0rEhpxVQHIoVyW1YDSkGsGIXzcaW4deC8B0pZrNSSyLTdIk7y+5olKt5+g0GmFIQ==
+
 "@solidjs/router@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@solidjs/router/-/router-0.5.0.tgz#b324c64f79d94c2b55011c2c8eea0a76771754fc"
   integrity sha512-rNR07l21tWWDVmCbaapggB89rEX7jlM2XChpTLqEGEnj46LzVZ8zgvjcF6NNKScByAlLpoQUkVIjB2KHpcMi+w==
+
+"@tanstack/solid-virtual@^3.0.0-beta.6":
+  version "3.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@tanstack/solid-virtual/-/solid-virtual-3.0.0-beta.6.tgz#4ea445499378d5b93b5c73f02465be45f1753936"
+  integrity sha512-/HjeHZb4UZxxFSAkICUEWOozGwHQpKlvtnUoS5uSMSuLOz0XM5vFq6zR6ENwAczKWDtkh8ntddk+zXAhyXOlEw==
+  dependencies:
+    "@reach/observe-rect" "^1.1.0"
 
 "@types/js-cookie@^3.0.2":
   version "3.0.2"
