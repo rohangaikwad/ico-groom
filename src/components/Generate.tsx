@@ -66,7 +66,15 @@ const Generate: Component = () => {
     const generateJSON = () => {
         return {
             "IcoMoonType": "selection",
-            "icons": icons,
+            "icons": icons.map(icon => {
+                return {
+                    icon: icon,
+                    properties: {
+                      "name": icon.tags[0],
+                      "code": icon.defaultCode
+                    }
+                }
+            }),
             "height": 1024,
             "metadata": {
                 "name": "icomoon",
